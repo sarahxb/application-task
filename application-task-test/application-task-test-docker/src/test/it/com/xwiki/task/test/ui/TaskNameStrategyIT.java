@@ -21,6 +21,7 @@ package com.xwiki.task.test.ui;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.xwiki.contrib.application.task.test.po.NameStrategiesPage;
 import org.xwiki.contrib.application.task.test.po.TaskManagerHomePage;
@@ -61,7 +62,8 @@ public class TaskNameStrategyIT
     }
 
     @Test
-    void addCharacterReplacement(TestUtils testUtils)
+    @Order(1)
+    void addCharacterReplacementStrategyTest(TestUtils testUtils)
     {
         NameStrategiesPage page = NameStrategiesPage.gotoPage();
 
