@@ -37,6 +37,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * UI Tests for tasks that follow the configured name strategy.
+ *
+ * @version $Id$
+ * @since 3.11.0
+ */
 @UITest(properties = {
     "xwikiPropertiesAdditionalProperties=test.prchecker.excludePattern=.*:XWiki\\.EntityNameValidation\\.AdministrationJSON" },
     // Needed for the dependency to the mentions macro that uses solr.
