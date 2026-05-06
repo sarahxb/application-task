@@ -48,6 +48,11 @@ public class DateMacroAdminPage extends ViewPage
         displayDateFormatInput.sendKeys(format);
     }
 
+    public void clearDisplayDateFormat()
+    {
+        displayDateFormatInput.clear();
+    }
+
     public void clickSave()
     {
         saveButton.click();

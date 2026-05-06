@@ -500,11 +500,11 @@ public class TaskMacrosIT
         setup.setCurrentWiki(wiki.getName());
 
         DocumentReference testRef = new DocumentReference(pageWithDateMacro, wiki);
-        setup.createPage(testRef, "{{date value=\"2026/05/05 11:36\"/}}");
+        setup.createPage(testRef, "{{date value=\"2026/01/05 11:36\"/}}");
 
         DateMacroPage page = new DateMacroPage();
         assertTrue(page.isDateDisplayed());
-        assertEquals("2026/05/05 11:36", page.getDisplayedDate());
+        assertEquals("2026/01/05 11:36", page.getDisplayedDate());
 
         // Change the date macro display format in the admin section.
         DateMacroAdminPage adminPage = DateMacroAdminPage.gotoPage();
@@ -516,7 +516,13 @@ public class TaskMacrosIT
         setup.gotoPage(pageWithDateMacro);
         DateMacroPage page2 = new DateMacroPage();
         assertTrue(page2.isDateDisplayed());
-        assertEquals("May 2026", page2.getDisplayedDate());
+        assertEquals("Jan 2026", page2.getDisplayedDate());
+
+        // Change back the macro display format to default.
+        DateMacroAdminPage adminPage2 = DateMacroAdminPage.gotoPage();
+        adminPage2.clearDisplayDateFormat();
+        adminPage2.clickSave();
+        assertEquals("", adminPage2.getDisplayDateFormat());
     }
 
     private String getMacroContent(String filename)
