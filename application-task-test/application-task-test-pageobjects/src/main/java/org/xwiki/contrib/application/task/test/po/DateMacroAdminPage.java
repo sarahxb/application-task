@@ -23,6 +23,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.xwiki.test.ui.po.ViewPage;
 
+/**
+ * Page object of the Date Macro administration section.
+ *
+ * @version $Id$
+ * @since 3.11.0
+ */
 public class DateMacroAdminPage extends ViewPage
 {
     @FindBy(id = "DateMacro.Code.Configuration_DateMacro.Code.ConfigurationClass_0_displayDateFormat")
